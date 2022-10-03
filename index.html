@@ -1,14 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vacation Destinations App</title>
-</head>
-<body>
-    <header><h1>Vacation Destinations</h1></header>
-
-    
-</body>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <header>
+    <h1>Find Your Dream Vacation Destination</h1>
+  </header>
+  <body>
+    <div class="inputBoxes">
+      <label>What's your budget?</label>
+      <select name="budget" id="select-budget">
+        <option value="">Select</option>
+        <option value="$">$</option>
+        <option value="$$">$$</option>
+        <option value="$$$">$$$</option>
+        <option value="$$$$">$$$$</option>
+      </select>
+      <label>When will you travel?</label>
+      <select name="seasons" id="select-season">
+        <option value="">Select</option>
+        <option value="Winter">Winter</option>
+        <option value="Spring">Spring</option>
+        <option value="Summer">Summer</option>
+        <option value="Fall">Fall</option>
+      </select>
+    </div>
+    <br />
+    <br />
+    <div id="results">
+      <img id="destination-image" src="pics/Adventure.jpg" alt="" />
+      <h2 id="destination-name"></h2>
+      <h3 id="destination-season"></h3>
+      <h3 id="destination-budget"></h3>
+      <h3 id="destination-things"></h3>
+      <button type="button" id="btn-favorite">Add to Favorites</button>
+    </div>
+    <h2>Here is a list of your favorite destinations:</h2>
+    <h3 id="favorites-text"></h3>
+  </body>
+  <script src="scripts/vendor.js"></script>
+  <script src="scripts/app.js"></script>
 </html>
