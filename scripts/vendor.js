@@ -11,6 +11,8 @@ const destinationThings = document.getElementById("destination-things");
 const favoriteLabel = document.getElementById("btn-favorite-label");
 const btnFavorite = document.getElementById("btn-favorite");
 const favoritesText = document.getElementById("favorites-text");
+const favoritesList = document.getElementById("favoritesList")
+const favoritesTitle = document.getElementById('favorites-title')
 
 //Add Event Listeners
 selectBudget.addEventListener("change", function () {
@@ -19,9 +21,9 @@ selectBudget.addEventListener("change", function () {
 selectSeason.addEventListener("change", function () {
   getResult(selectBudget.value, selectSeason.value);
 });
-// btnFavorite.addEventListener("click", function () {
-//   addToFavorites();
-// });
+btnFavorite.addEventListener("click", function () {
+  addToFavorites();
+});
 
 // Destinations Object
 let destinations = [

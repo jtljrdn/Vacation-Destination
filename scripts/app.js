@@ -22,9 +22,23 @@ function printResult(destination) {
   destinationThings.innerHTML = `In ${destination.name}, you can go ${destination.activities}`;
   btnFavorite.style.display = "inline";
   favoriteLabel.style.display = "inline";
-  destinationChoice = destination.name;
+  destinationChoiceName = destination.name;
+  destinationChoice = destination
 }
 
-// function addToFavorites() {
-//     if (destinationChoice)
-// }
+function addToFavorites() {
+    favorites.push(destinationChoice.name)
+    console.log(favorites)
+    let uniqueFavorites = [... new Set(favorites)]
+    console.log(uniqueFavorites)
+    fillFavoritesList(uniqueFavorites)
+    favoritesTitle.style.display = 'flex'
+}
+
+function fillFavoritesList(uniqueFavorites){ // Modified from Grocery List App
+    uniqueFavorites.forEach(function(item) {
+      let li = document.createElement("li");
+      li.innerHTML = `<li> ${item}     ${destinationChoice.price} </li>`
+      favoritesList.appendChild(li);
+    });
+    }

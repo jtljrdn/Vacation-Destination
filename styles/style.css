@@ -18,3 +18,26 @@ img {
     width: 40rem;
     height: auto;
 }
+
+.list {
+    color: #555;
+    font-size: 22px;
+    padding: 0 !important;
+    width: 500px;
+    border: 1px solid #dedede;
+  }
+  .list li {
+    list-style: none;
+    background-color : #f8f8f8;
+    border-bottom: 1px dotted #ccc;
+    text-indent: 25px;
+    height: auto;
+    padding: 10px;
+    text-transform: capitalize;
+    color: #3498db;
+  }
+  li a {
+    float: right;
+    text-decoration: none;
+    color: red;
+  }
