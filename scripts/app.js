@@ -1,6 +1,5 @@
 let favorites = [];
 let destinationChoice = "";
-let count = 0;
 
 // Takes the two input boxes and parses the array for destinations that match the selected filters
 function getResult(budget, season) {
@@ -10,9 +9,13 @@ function getResult(budget, season) {
     if (budget == destBudget && season == destSeason) {
       printResult(destinations[i]);
       console.log(`Budget and season matches ${destinations[i].name}`);
+      break;
+    } else {
+      noResults();
     }
   }
 }
+
 // Displays result on webpage
 function printResult(destination) {
   destinationImage.src = destination.image;
@@ -23,22 +26,34 @@ function printResult(destination) {
   btnFavorite.style.display = "inline";
   favoriteLabel.style.display = "inline";
   destinationChoiceName = destination.name;
-  destinationChoice = destination
+  destinationChoice = destination;
 }
 
+function noResults() {
+  console.log("No Match Found");
+  destinationImage.src = "pics/Adventure.jpg";
+  destinationName.innerHTML = "No Match Found :(";
+  destinationSeason.innerHTML = "";
+  destinationBudget.innerHTML = "";
+  destinationThings.innerHTML = "";
+}
+
+// Adds item to favorite
 function addToFavorites() {
-    favorites.push(destinationChoice.name)
-    console.log(favorites)
-    let uniqueFavorites = [... new Set(favorites)]
-    console.log(uniqueFavorites)
-    fillFavoritesList(uniqueFavorites)
-    favoritesTitle.style.display = 'flex'
+  favorites.push(destinationChoice.name);
+  console.log(favorites);
+  let uniqueFavorites = [...new Set(favorites)];
+  console.log(uniqueFavorites);
+  fillFavoritesList(uniqueFavorites);
+  favoritesTitle.style.display = "flex";
 }
 
-function fillFavoritesList(uniqueFavorites){ // Modified from Grocery List App
-    uniqueFavorites.forEach(function(item) {
-      let li = document.createElement("li");
-      li.innerHTML = `<li> ${item}     ${destinationChoice.price} </li>`
-      favoritesList.appendChild(li);
-    });
-    }
+// Fills favorite list
+function fillFavoritesList(uniqueFavorites) {
+  // Modified from Grocery List App
+  uniqueFavorites.forEach(function (item) {
+    let li = document.createElement("li");
+    li.innerHTML = `<li> ${item}     ${destinationChoice.price} </li>`;
+    favoritesList.appendChild(li);
+  });
+} // Will need to be changed, very buggy
